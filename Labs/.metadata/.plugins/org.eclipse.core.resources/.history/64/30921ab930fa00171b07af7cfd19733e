@@ -1,0 +1,5 @@
+package mum.edu.lab2_2;
+
+public enum Singleton {
+
+}

@@ -1,0 +1,5 @@
+package mum.edu.asd;
+
+public class Singleton {
+
+}
