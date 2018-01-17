@@ -2,7 +2,7 @@ package mum.asd.lab3_1;
 
 public class Adaptee {
 
-	private String[] data;
+	private String[] data = new String[100];
 	private int start;
 	private int end;
 

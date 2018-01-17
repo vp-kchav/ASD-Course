@@ -2,7 +2,7 @@ package mum.asd.lab3_1;
 
 public class Adapter implements Stack, Queue {
 
-	private Adaptee adaptee;
+	private Adaptee adaptee = new Adaptee();
 
 	@Override
 	public void push(String str) {
