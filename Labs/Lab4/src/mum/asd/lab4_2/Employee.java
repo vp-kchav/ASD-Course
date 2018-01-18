@@ -84,7 +84,7 @@ public class Employee {
 	}
 
 	public Employee(Long id, String firstName, String lastName, String streeAddress, String city, String state,
-			String zipCode, Employee supervisor, Employee[] staff) {
+			String zipCode) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -93,8 +93,6 @@ public class Employee {
 		this.city = city;
 		this.state = state;
 		this.zipCode = zipCode;
-		this.supervisor = supervisor;
-		this.staff = staff;
 	}
 
 	@Override
