@@ -1,7 +1,7 @@
 package mum.asd.lab4_2;
 
 public class Employee {
-	private String id;
+	private Long id;
 	private String firstName;
 	private String lastName;
 	private String streeAddress;
@@ -11,11 +11,11 @@ public class Employee {
 	private Employee supervisor;
 	private Employee staff[];
 	
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -83,7 +83,7 @@ public class Employee {
 		this.staff = staff;
 	}
 
-	public Employee(String id, String firstName, String lastName, String streeAddress, String city, String state,
+	public Employee(Long id, String firstName, String lastName, String streeAddress, String city, String state,
 			String zipCode, Employee supervisor, Employee[] staff) {
 		super();
 		this.id = id;
@@ -103,7 +103,6 @@ public class Employee {
 		try {
 			clone = super.clone();
 		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return clone;
