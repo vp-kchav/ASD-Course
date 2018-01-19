@@ -1,6 +1,13 @@
 package mum.asd.lab4_2;
 
-public class Employee {
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Employee implements Cloneable, Serializable {
 	private Long id;
 	private String firstName;
 	private String lastName;
@@ -9,7 +16,7 @@ public class Employee {
 	private String state;
 	private String zipCode;
 	private Employee supervisor;
-	private Employee staff[];
+	private Employee staff[] = new Employee[100];
 	
 	public Long getId() {
 		return id;
@@ -94,15 +101,39 @@ public class Employee {
 		this.state = state;
 		this.zipCode = zipCode;
 	}
+	
+	public Employee() {
+	    
+	}
 
 	@Override
-	protected Object clone() {
-		Object clone = null;
-		try {
-			clone = super.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		return clone;
+	protected Object clone() throws CloneNotSupportedException{
+//	    return super.clone();
+	    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(bos);
+
+            oos.writeObject(this);
+            oos.flush();
+            oos.close();
+            bos.close();
+            byte[] byteData = bos.toByteArray();
+
+            // restoring class from a stream of bytes
+            ByteArrayInputStream bais = new ByteArrayInputStream(byteData);
+            return (Employee) new ObjectInputStream(bais).readObject();
+        } catch (ClassNotFoundException | IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            try {
+                oos.close();
+                bos.close();
+            } catch (IOException ioe) {
+                System.out.println("IOException in ObjectCloner = " + ioe);
+            }
+        }
 	}
+
 }
