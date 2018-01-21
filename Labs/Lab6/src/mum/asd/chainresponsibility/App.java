@@ -28,5 +28,12 @@ public class App {
 		
 		AbstractAgent processAgent = getChainResponsibility();
 		processAgent.handleRequest(record);
+		
+//		int c = 5;
+//		int a,b;
+//		for(int i=1;i<=c/2;i++) {
+//		    a = i;
+//		    b = c
+//		}
 	}
 }
