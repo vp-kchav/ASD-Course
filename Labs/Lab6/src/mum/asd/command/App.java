@@ -10,8 +10,9 @@ public class App {
         Square s = new Square(5);
         Broker broker = new Broker();
         broker.execute(new CreateCommand(s));
-        broker.execute(new MoveCommand(s, 2));
+//        broker.execute(new MoveCommand(s, 2));
         broker.execute(new ScaleCommand(s,2));
+        broker.undo();
     }
 
 }

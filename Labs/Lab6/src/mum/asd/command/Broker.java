@@ -11,7 +11,12 @@ public class Broker {
 
     public void execute(Command com) {
         command = com;
+        stackCommand.add(com);
         command.execute();
+    }
+    
+    public void undo() {
+        stackCommand.pop().undo();
     }
     
     public Command getCommand() {

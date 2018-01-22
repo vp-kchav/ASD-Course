@@ -37,8 +37,8 @@ public class ScaleCommand implements Command {
 
     @Override
     public void undo() {
-        // TODO Auto-generated method stub
-        
+        square.setWidth(square.getWidth() / scale);
+        square.draw(0);
     }
 
 }

@@ -5,8 +5,18 @@ package mum.asd.command;
 
 
 public class Square {
+    private int move = 0;
     private int width;
     
+    
+    public int getMove() {
+        return move;
+    }
+    
+    
+    public void setMove(int move) {
+        this.move = move;
+    }
     
     public Square(int width) {
         this.width = width;

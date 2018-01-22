@@ -31,13 +31,15 @@ public class MoveCommand implements Command {
     
     @Override
     public void execute() {
+        square.setMove(move);
         square.draw(move);
     }
 
     @Override
     public void undo() {
-        // TODO Auto-generated method stub
-        
+        int redoMove = square.getMove() - move;
+        square.setMove(redoMove);
+        square.draw(redoMove);
     }
 
 }
