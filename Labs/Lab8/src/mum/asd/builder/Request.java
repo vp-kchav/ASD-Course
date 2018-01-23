@@ -10,6 +10,12 @@ public class Request {
 		private boolean isSaleLead;
 		private boolean needCallBack;
 		
+	    public String toString() {
+	        return "Request [reqId=" + reqId + ", requester=" + requester + ", agent=" + agent + ", reqContent="
+	                + reqContent + ", respContent=" + respContent + ", isAnswered=" + isAnswered + ", isSaleLead="
+	                + isSaleLead + ", needCallBack=" + needCallBack + "]";
+	    }
+		
 		public String getReqId() {
 			return reqId;
 		}

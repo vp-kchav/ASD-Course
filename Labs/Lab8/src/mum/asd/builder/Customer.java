@@ -3,7 +3,6 @@ package mum.asd.builder;
 public class Customer {
 	private String firstName;  
 	private String lastName;  
-	private Address address;  
 	private String phone;  
 	private String email; 
 
@@ -11,16 +10,13 @@ public class Customer {
 		
 	}
 	
-	public Customer(String firstName, String lastName, Address address, String phone, String email) {
+	public Customer(String firstName, String lastName,  String phone, String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.address = address;
 		this.phone = phone;
 		this.email = email;
 	}
-
-
 
 	public String getFirstName() {
 		return firstName;
@@ -33,12 +29,6 @@ public class Customer {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
 	}
 	public String getPhone() {
 		return phone;
