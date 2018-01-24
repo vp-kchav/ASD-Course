@@ -9,6 +9,7 @@ public class SimulateDriving {
     private State gravelState;
     private State wetState;
     private State iceState;
+    private State state = regularState;
     
     public State getRegularState() {
         return regularState;
@@ -49,7 +50,7 @@ public class SimulateDriving {
         this.iceState = iceState;
     }
 
-    private State state = regularState;
+    
     
     public State getState() {
         return state;
