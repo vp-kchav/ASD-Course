@@ -9,7 +9,7 @@ public class Caretaker {
 
     Stack<Memento> mementos = new Stack<Memento>();
     
-    public Memento get() {
+    public Memento get() { 
         return mementos.pop();
     }
     
