@@ -17,9 +17,13 @@ public class App {
         players.add(p2);
         ReversiMediator rm = new ReversiMediator(players);
         p1.setMediator(rm);p2.setMediator(rm);
-        rm.print();
+//        rm.print();
         p1.move(6, 6);
+        rm.print();
         System.out.println("---");
+        p2.move(6, 7);
+        rm.print();
+        p1.move(7, 7);
         rm.print();
     }
 
