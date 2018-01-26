@@ -5,9 +5,21 @@ import java.util.List;
 
 public class ReversiMediator implements Mediator {
 
-	List<Player> players =  new ArrayList<Player>();
+	private List<Player> players =  new ArrayList<Player>();
+	Player turn;
+	private int[][] board = new int[8][8];	
 	
-	public List<Player> getPlayers() {
+	
+    public int[][] getBoard() {
+        return board;
+    }
+
+    
+    public void setBoard(int[][] board) {
+        this.board = board;
+    }
+
+    public List<Player> getPlayers() {
 		return players;
 	}
 
@@ -15,7 +27,23 @@ public class ReversiMediator implements Mediator {
 		this.players = players;
 	}
 
+	private void initialBoard() {
+	 // initialize board
+	    int start = 3;
+	    for(Player p : getPlayers()) {
+	        board[start][3] = p.getColor();
+	        board[start][4] = p.getColor();
+	        start++;
+	    }
+	}
+	
 	public ReversiMediator() {
+	    initialBoard();
+	}
+	
+	public ReversiMediator(List<Player> players) {
+	    this.players = players;
+	    initialBoard();
 	}
 	
 	public void addPlayer(Player player) {
@@ -23,12 +51,23 @@ public class ReversiMediator implements Mediator {
 	}
 	
 	@Override
-	public void move(Player player) {
+	public void move(Player player,int x, int y) {
 		for(Player p : players) {
 			if(!player.getName().equalsIgnoreCase(p.getName())) {
-				
+				turn = p;
 			}
 		}
+		board[x][y] = player.getColor();
 	}
+	
+	@Override
+    public void print() {
+        for(int i = 0; i <= 7; i++) {
+            for(int j = 0; j <= 7; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
 
 }

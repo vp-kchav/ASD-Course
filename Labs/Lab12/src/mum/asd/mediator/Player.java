@@ -2,12 +2,34 @@ package mum.asd.mediator;
 
 public class Player implements IPlayer {
 
-	private String name;
+    private String name;
 	private boolean isWin;
 	private boolean youTurn;
 	private int score;
+	private int color ;
+	private ReversiMediator mediator;
 	
-	public String getName() {
+	public ReversiMediator getMediator() {
+	    return mediator;
+	}
+	
+	
+	public void setMediator(ReversiMediator mediator) {
+	    this.mediator = mediator;
+	}
+	
+	public Player(String name) {
+	    this.name = name;
+	}
+	
+    public int getColor() {
+        return color;
+    }
+    
+    public void setColor(int color) {
+        this.color = color;
+    }
+    public String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -32,5 +54,7 @@ public class Player implements IPlayer {
 		this.score = score;
 	}
 	
-	
+	public void move(int x, int y) {
+	    mediator.move(this, x, y);
+	}
 }
