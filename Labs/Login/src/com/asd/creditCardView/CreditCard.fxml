@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="385.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asd.creditcard.CreditCardController">
+	<children>
+		<TableView fx:id="table" layoutX="21.0" layoutY="124.0" prefHeight="238.0" prefWidth="563.0">
+			<columns>
+				<TableColumn fx:id="col1" prefWidth="94.0" text="Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="col1" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn fx:id="col2" prefWidth="163.0" text="CC Number">
+					<cellValueFactory>
+						<PropertyValueFactory property="col2" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn fx:id="col3" prefWidth="97.0" text="Exp Date">
+					<cellValueFactory>
+						<PropertyValueFactory property="col3" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn fx:id="col4" prefWidth="102.0" text="Type">
+					<cellValueFactory>
+						<PropertyValueFactory property="col4" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn fx:id="col5" prefWidth="106.0" text="Balance">
+					<cellValueFactory>
+						<PropertyValueFactory property="col5" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+		<Button fx:id="addAccount" layoutX="21.0" layoutY="35.0" mnemonicParsing="false" onAction="#addAccount" prefWidth="150.0" text="Add Account" />
+		<Button fx:id="bill" layoutX="21.0" layoutY="76.0" mnemonicParsing="false" onAction="#Bill" prefWidth="150.0" text="Monthly Bill" />
+		<Button fx:id="deposit" layoutX="228.0" layoutY="76.0" mnemonicParsing="false" onAction="#Deposit" prefWidth="150.0" text="Deposit" />
+		<Button fx:id="charge" layoutX="228.0" layoutY="35.0" mnemonicParsing="false" onAction="#Charge" prefWidth="150.0" text="Charge" />
+		<Button fx:id="close" layoutX="434.0" layoutY="60.0" mnemonicParsing="false" onAction="#logoutBtn" prefWidth="150.0" text="Logout" />
+	</children>
+</AnchorPane>

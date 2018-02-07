@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="277.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asd.atm.view.Controller">
+   <children>
+      <HBox layoutY="222.0" prefHeight="40.0" prefWidth="499.0" spacing="10.0">
+         <children>
+            <Button fx:id="insert" mnemonicParsing="false" onAction="#insertCard" text="Insert Card" />
+            <Button fx:id="eject" mnemonicParsing="false" onAction="#ejectCard" text="Eject Card" />
+            <Button fx:id="cancel" mnemonicParsing="false" onAction="#exit" text="Cancel" />
+           
+         </children>
+         <padding>
+            <Insets left="130.0" />
+         </padding>
+      </HBox>
+      <TextField fx:id="pin" layoutX="156.0" layoutY="95.0" onAction="#requestCash" prefHeight="31.0" prefWidth="108.0" />
+      <VBox layoutX="14.0" layoutY="22.0" prefHeight="21.0" prefWidth="100.0" spacing="15.0">
+         <children>
+            <Label text="ATM">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Label layoutX="33.0" layoutY="100.0" text="Enter pin" />
+      <Label layoutX="33.0" layoutY="139.0" text="Enter amount" />
+      <TextField fx:id="amount" layoutX="156.0" layoutY="132.0" onAction="#requestCash" />
+      <TextArea fx:id="output" editable="false" layoutX="103.0" layoutY="11.0" prefHeight="76.0" prefWidth="353.0">
+         <font>
+            <Font size="21.0" />
+         </font></TextArea>
+      <Button fx:id="withdraw" layoutX="368.0" layoutY="132.0" mnemonicParsing="false" onAction="#requestCash" text="Withdraw" />
+   </children>
+</AnchorPane>
